@@ -15,12 +15,38 @@ input,
     margin: 4px;
 }
 
+ul,
 input {
     font-size: 1.4em;
+}
+
+input {
     outline: none;
     border: none;
 }
 
 .btn {
     border-radius: 3px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0.4rem;
+}
+
+ul li {
+    padding-bottom: 0.2em;
+    margin-bottom: 0.2em;
+    border-bottom: 4px solid #EFEFEF;
+}
+
+ul li:first-child {
+    padding-top: 0.2em;
+    border-top: 4px solid #EFEFEF;
+}
+
+svg {
+    width: 1.4rem;
+    margin-left: 1.2em;
+    vertical-align: middle;
 }
