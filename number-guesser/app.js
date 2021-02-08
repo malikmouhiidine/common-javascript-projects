@@ -1,7 +1,7 @@
 // Game values
 let min = 1,
   max = 10,
-  winningNum = 2,
+  winningNum = getRandomNum(min, max),
   guessesLeft = 3;
 // UI elements
 const game = document.getElementById("game"),
@@ -16,7 +16,9 @@ game.addEventListener("mousedown", function (e) {
     window.location.reload();
   }
 });
-
+function getRandomNum(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 minNum.textContent = min;
 maxNum.textContent = max;
 guessBtn.addEventListener("click", function () {
