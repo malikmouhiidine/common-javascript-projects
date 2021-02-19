@@ -9,7 +9,9 @@
         integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
         crossorigin="anonymous" />
     <style>
-        .success .error {
+        .success,
+        .error {
+            border-radius: 3px;
             color: white;
             padding: 5px;
             margin: 5px 0 15px 0;
@@ -22,6 +24,11 @@
         .error {
             background: red;
         }
+
+        svg {
+            width: 1em;
+            vertical-align: middle;
+        }
     </style>
     <script src="./app.js" defer></script>
     <title>Book list</title>
@@ -30,7 +37,7 @@
 <body>
     <div class="container">
         <h1>Add book</h1>
-        <form id="book-form">
+        <form id="book-form" autocomplete="off">
             <div>
                 <label for="title">Title</label>
                 <input type="text" id="title" class="u-full-width">
