@@ -53,7 +53,7 @@ document.getElementById("book-form").addEventListener("submit", function (e) {
     author = document.getElementById("author").value,
     isbn = document.getElementById("isbn").value;
   const book = new Book(title, author, isbn);
-  const ui = new UI(book);
+  const ui = new UI();
   if (title === "" || author === "" || isbn === "") {
     ui.showAlert("Please fill in all fields", "error");
   } else {
