@@ -26,5 +26,5 @@ http
 // DELETE a user
 http
   .delete("http://jsonplaceholder.typicode.com/posts/20")
-  .then((data) => console.log(data))
+  .then((data) => console.log("%c" + data, "color: red"))
   .catch((error) => console.log(error));
