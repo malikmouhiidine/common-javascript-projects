@@ -29,4 +29,45 @@ class UI {
         <div id="repos"></div>
         `;
   }
+  showRepos(repos) {
+    let output = "";
+    repos.forEach((repo) => {
+      output += `<div class="card card-body mb-2">
+                      <div class="row">
+                          <div class="col-md-6">
+                              <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+                              <p><small>${repo.description}</small></p>
+                          </div>
+                          <div class="col-md-6">
+                              <span class="badge badge-primary">Stars: ${repo.stargazers_count}</span>
+                              <span class="badge badge-secondary">Watchers: ${repo.watchers_count}</span>
+                              <span class="badge badge-success">Forks: ${repo.forks_count}</span>
+                          </div>
+                      </div>
+                </div>`;
+    });
+    document.getElementById("repos").innerHTML = output;
+  }
+  clearProfile() {
+    this.profile.innerHTML = "";
+  }
+  showAlert(msg, alertClass) {
+    //clear any remaining alert
+    this.clearAlert();
+    const div = document.createElement("div");
+    div.className = alertClass;
+    div.appendChild(document.createTextNode(msg));
+    const container = document.querySelector(".searchContainer");
+    const search = document.querySelector(".search");
+    container.insertBefore(div, search);
+    setTimeout(() => {
+      this.clearAlert();
+    }, 3000);
+  }
+  clearAlert() {
+    const currentAlert = document.querySelector(".alert");
+    if (currentAlert) {
+      currentAlert.remove();
+    }
+  }
 }
